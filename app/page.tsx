@@ -1,4 +1,4 @@
-import { Camera, Users, BookOpen, User } from "lucide-react"
+import { Camera, Users, User } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import Link from "next/link"
@@ -90,38 +90,30 @@ export default function HomePage() {
           </div>
         </div>
 
-        {/* Primary Action Button */}
-        <div className="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50">
-          <Link href="/assessment">
-            <Button size="lg" className="w-64 h-16 rounded-full shadow-lg text-lg font-semibold">
-              <Camera className="w-6 h-6 mr-3" />
-              New Assessment
-            </Button>
-          </Link>
-        </div>
-      </main>
-
-      {/* Bottom Navigation */}
-      <nav className="fixed bottom-0 left-0 right-0 bg-card border-t border-border pb-safe">
-        <div className="container mx-auto px-4">
-          <div className="flex justify-around py-2">
-            <Link href="/dashboard">
+        {/* Bottom Navigation */}
+        <nav className="fixed bottom-0 left-0 right-0 bg-card border-t border-border pb-safe">
+          <div className="container mx-auto px-4">
+            <div className="flex justify-around py-2">
+              <Link href="/dashboard">
+                <Button variant="ghost" className="flex-col gap-1 h-auto py-2">
+                  <Users className="w-5 h-5" />
+                  <span className="text-xs">My Herd</span>
+                </Button>
+              </Link>
+              <Link href="/assessment">
+                <Button variant="ghost" className="flex-col gap-1 h-auto py-2">
+                  <Camera className="w-5 h-5" />
+                  <span className="text-xs">New Assessment</span>
+                </Button>
+              </Link>
               <Button variant="ghost" className="flex-col gap-1 h-auto py-2">
-                <Users className="w-5 h-5" />
-                <span className="text-xs">My Herd</span>
+                <User className="w-5 h-5" />
+                <span className="text-xs">Profile</span>
               </Button>
-            </Link>
-            <Button variant="ghost" className="flex-col gap-1 h-auto py-2">
-              <BookOpen className="w-5 h-5" />
-              <span className="text-xs">Learn</span>
-            </Button>
-            <Button variant="ghost" className="flex-col gap-1 h-auto py-2">
-              <User className="w-5 h-5" />
-              <span className="text-xs">Profile</span>
-            </Button>
+            </div>
           </div>
-        </div>
-      </nav>
+        </nav>
+      </main>
     </div>
   )
 }
